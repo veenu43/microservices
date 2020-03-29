@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: config-client
+server:
+  port: 8084
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8090/eureka}
+  instance:
+    preferIpAddress: true
