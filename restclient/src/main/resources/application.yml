@@ -1,8 +1,14 @@
 spring:
   application:
     name: config-client
-server:
-  port: 8084
+  profiles:
+    active: development
+  server:
+    port: 8084
+  cloud:
+    config:
+      uri: http://localhost:8888
+      label: master
 
 eureka:
   client:
@@ -10,3 +16,9 @@ eureka:
       defaultZone: ${EUREKA_URI:http://localhost:8090/eureka}
   instance:
     preferIpAddress: true
+
+
+logging:
+  level:
+    root: DEBUG
+    org.springframework.web: DEBUG
